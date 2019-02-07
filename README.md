@@ -1,5 +1,4 @@
-# PROCESS MANAGER API
-===============================================
+# <center>PROCESS MANAGER API</center>
 #### Get process's list
 *Returns json data with information about processes*
 ###### URL
