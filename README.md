@@ -1,11 +1,11 @@
 # PROCESS MANAGER API
 ===============================================
 
-## Get process's list
+### Get process's list
 *Returns json data with information about processes*
-### URL
+#### URL
 **/v1/process/list**
-### Method
+#### Method
 **GET**
 ### Success Response:
 * **Code: 200**
