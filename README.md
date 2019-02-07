@@ -5,6 +5,7 @@
 * [Check if process exist](#processExist)
 * [Get process info](#processInfo)
 * [Create new process](#processCreate)
+* [Delete process](#processDelete)
 ---------------------------------------------
 #### <a name="processList"></a>Get process's list *[content](#content)*
 *Returns json data with information about processes*
@@ -167,6 +168,42 @@ Required:
         }
     });
 ```
-
-
+----------------------------------
+#### <a name="processDelete">Delete process *[content](#content)*
+*Delete process*
+###### URL
+*/v1/process/{processName}*
+###### Method
+*DELETE*
+###### URL Params
+Required:  
+* *processName=[string]*
+###### Success Response:
+```javascript
+    {
+        Code: 200,
+        Message: "Success",
+        Response: ""
+    }
+```
+###### Error Response:
+```javascript
+    {
+        Code: 400,
+        Message: "Detailed error description",
+        Response: "" 
+    }
+```
+###### Sample Call:
+```javascript
+    $.ajax({
+        url: "/v1/process/processName",
+        dataType: "json",
+        type: "DELETE",
+        success : function(r) {
+            console.log(r);
+        }
+    });
+```
+----------------------------------
     
