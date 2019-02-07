@@ -20,9 +20,13 @@
     }
 ```
 ###### Error Response:
-* **Code: 400**
-* **Message: "Detailed error description"**
-* **Response: {}**
+```javascript
+    {
+        Code: 400,
+        Message: "Detailed error description",
+        Response: "" 
+    }
+```
 ###### Sample Call:
 ```javascript
       $.ajax({
