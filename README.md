@@ -1,9 +1,9 @@
 # <p align="center">PROCESS MANAGER API</p>
 ---------------------------------------------
 ##<p align="center">Content</p>
-1 [Get process's list](#processList)
-1 [Check if process exist](#processExist)
-1 [Get process info](#processInfo)
+* [Get process's list](#processList)
+* [Check if process exist](#processExist)
+* [Get process info](#processInfo)
 ---------------------------------------------
 #### <a name="processList"></a>Get process's list
 *Returns json data with information about processes*
