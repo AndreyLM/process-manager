@@ -1,11 +1,11 @@
 # <p align="center">PROCESS MANAGER API</p>
 ---------------------------------------------
-##<p align="center">Content</p>
+## <a name="content"><p align="center">Content</p>
 * [Get process's list](#processList)
 * [Check if process exist](#processExist)
 * [Get process info](#processInfo)
 ---------------------------------------------
-#### <a name="processList"></a>Get process's list
+#### <a name="processList"></a>Get process's list *[content](#content)*
 *Returns json data with information about processes*
 ###### URL
 */v1/process/list*
@@ -43,7 +43,7 @@
     });
 ```
 -----------------------------------------------
-#### <a name="processExist">Check if process exist
+#### <a name="processExist">Check if process exist *[content](#content)*
 *Returns json data with information about process existence*
 ###### URL
 */v1/process/exist/{process_name}*
@@ -77,7 +77,7 @@
     });
 ```
 -----------------------------------------------
-#### <a name="processInfo">Get process info
+#### <a name="processInfo">Get process info *[content](#content)*
 *Returns json data with information about process*
 ###### URL
 */v1/process/info/{process_name}*
