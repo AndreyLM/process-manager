@@ -4,13 +4,21 @@
 #### Get process's list
 *Returns json data with information about processes*
 ###### URL
-**/v1/process/list**
+*/v1/process/list*
 ###### Method
-**GET**
+*GET*
 ###### Success Response:
-* **Code: 200**
-* **Message: "Success"**
-* **Response: { id : 12, name : "Michael Bloom" }**
+```javascript
+    {
+        Code: 200,
+        Message: "Success",
+        Response: [
+            { Name: "Process name", MaxCount: 4, Count: 3},
+            { Name: "Process name2", MaxCount: 3, Count: 3},
+            ....
+        ] 
+    }
+```
 ###### Error Response:
 * **Code: 400**
 * **Message: "Detailed error description"**
