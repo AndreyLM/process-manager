@@ -84,9 +84,12 @@ Required:
 #### <a name="processInfo">Get process info *[content](#content)*
 *Returns json data with information about process*
 ###### URL
-*/v1/process/info/{process_name}*
+*/v1/process/info/{processName}*
 ###### Method
 *GET*
+###### URL Params
+Required:  
+* *processName=[string]*
 ###### Success Response:
 ```javascript
     {
@@ -122,6 +125,15 @@ Required:
 */v1/process*
 ###### Method
 *POST*
+###### Data Params
+```javascript
+    {
+        Process: {
+            Name: [string:required],
+            MaxCount: [integer:required],
+        }
+    }
+```
 ###### Success Response:
 ```javascript
     {
@@ -141,9 +153,15 @@ Required:
 ###### Sample Call:
 ```javascript
     $.ajax({
-        url: "/v1/process/info/processName",
+        url: "/v1/process",
         dataType: "json",
-        type : "GET",
+        type: "POST",
+        data: {
+            Process: {
+                Name: "processName",
+                MaxCount: 2
+            }
+        },
         success : function(r) {
             console.log(r);
         }
