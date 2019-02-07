@@ -1,4 +1,4 @@
-# <center>PROCESS MANAGER API</center>
+# <p style="text-align: center;">PROCESS MANAGER API</p>
 #### Get process's list
 *Returns json data with information about processes*
 ###### URL
