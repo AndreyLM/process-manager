@@ -51,8 +51,8 @@
 ###### Method
 *GET*
 ###### URL Params
-**Required:**
-*processName=[string]*
+Required:  
+* *processName=[string]*
 ###### Success Response:
 ```javascript
     {
