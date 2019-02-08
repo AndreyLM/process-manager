@@ -1,20 +1,25 @@
 *[content](../README.md)*
-#### Get task's list 
-*Returns json data with information about tasks*
+#### Create task 
+*Create new task*
 ###### URL
-*/v1/task/list*
+*/v1/task*
 ###### Method
-*GET*
+*POST*
+###### Data Params
+```javascript
+    {
+        Task: {
+            Name: [string:required],
+            MaxCount: [integer:required],
+        }
+    }
+```
 ###### Success Response:
 ```javascript
     {
         Code: 200,
         Message: "Success",
-        Response: [
-            { Name: "Task name", MaxCount: 4, Count: 3},
-            { Name: "Task name2", MaxCount: 3, Count: 3},
-            ....
-        ] 
+        Response: "" 
     }
 ```
 ###### Error Response:
@@ -28,9 +33,15 @@
 ###### Sample Call:
 ```javascript
     $.ajax({
-        url: "/v1/task/list",
+        url: "/v1/task",
         dataType: "json",
-        type : "GET",
+        type: "POST",
+        data: {
+            Task: {
+                Name: "taskName",
+                MaxCount: 2
+            }
+        },
         success : function(r) {
             console.log(r);
         }

@@ -1,20 +1,19 @@
 *[content](../README.md)*
-#### Get task's list 
-*Returns json data with information about tasks*
+#### Delete task 
+*Delete task*
 ###### URL
-*/v1/task/list*
+*/v1/task/{taskName}*
 ###### Method
-*GET*
+*DELETE*
+###### URL Params
+Required:  
+* *taskName=[string]*
 ###### Success Response:
 ```javascript
     {
         Code: 200,
         Message: "Success",
-        Response: [
-            { Name: "Task name", MaxCount: 4, Count: 3},
-            { Name: "Task name2", MaxCount: 3, Count: 3},
-            ....
-        ] 
+        Response: ""
     }
 ```
 ###### Error Response:
@@ -28,9 +27,9 @@
 ###### Sample Call:
 ```javascript
     $.ajax({
-        url: "/v1/task/list",
+        url: "/v1/task/taskName",
         dataType: "json",
-        type : "GET",
+        type: "DELETE",
         success : function(r) {
             console.log(r);
         }

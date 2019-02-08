@@ -1,20 +1,19 @@
 *[content](../README.md)*
-#### Get task's list 
-*Returns json data with information about tasks*
+#### Check if task exist 
+*Returns json data with information about task existence*
 ###### URL
-*/v1/task/list*
+*/v1/task/exist/{taskName}*
 ###### Method
 *GET*
+###### URL Params
+Required:  
+* *taskName=[string]*
 ###### Success Response:
 ```javascript
     {
         Code: 200,
         Message: "Success",
-        Response: [
-            { Name: "Task name", MaxCount: 4, Count: 3},
-            { Name: "Task name2", MaxCount: 3, Count: 3},
-            ....
-        ] 
+        Response: true || false 
     }
 ```
 ###### Error Response:
@@ -28,7 +27,7 @@
 ###### Sample Call:
 ```javascript
     $.ajax({
-        url: "/v1/task/list",
+        url: "/v1/task/exist/taskName",
         dataType: "json",
         type : "GET",
         success : function(r) {
