@@ -1,14 +1,14 @@
 *[content](../README.md)*
-#### Get task info
+### Get task info
 *Returns json data with information about task*
-###### URL
+#### URL
 */v1/task/info/{taskName}*
-###### Method
+#### Method
 *GET*
-###### URL Params
+#### URL Params
 Required:  
 * *taskName=[string]*
-###### Success Response:
+#### Success Response:
 ```javascript
     {
         Code: 200,
@@ -16,7 +16,7 @@ Required:
         Response: { Name: "Task name", MaxCount: 4, Count: 3} 
     }
 ```
-###### Error Response:
+#### Error Response:
 ```javascript
     {
         Code: 404,
@@ -24,7 +24,7 @@ Required:
         Response: "" 
     }
 ```
-###### Sample Call:
+#### Sample Call:
 ```javascript
     $.ajax({
         url: "/v1/task/info/taskName",

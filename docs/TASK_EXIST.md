@@ -1,14 +1,14 @@
 *[content](../README.md)*
-#### Check if task exist 
+### Check if task exist 
 *Returns json data with information about task existence*
-###### URL
+#### URL
 */v1/task/exist/{taskName}*
-###### Method
+#### Method
 *GET*
-###### URL Params
+#### URL Params
 Required:  
 * *taskName=[string]*
-###### Success Response:
+#### Success Response:
 ```javascript
     {
         Code: 200,
@@ -16,7 +16,7 @@ Required:
         Response: true || false 
     }
 ```
-###### Error Response:
+#### Error Response:
 ```javascript
     {
         Code: 400,
@@ -24,7 +24,7 @@ Required:
         Response: "" 
     }
 ```
-###### Sample Call:
+#### Sample Call:
 ```javascript
     $.ajax({
         url: "/v1/task/exist/taskName",

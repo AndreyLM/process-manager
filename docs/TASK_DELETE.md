@@ -1,14 +1,14 @@
 *[content](../README.md)*
-#### Delete task 
+### Delete task 
 *Delete task*
-###### URL
+#### URL
 */v1/task/{taskName}*
-###### Method
+#### Method
 *DELETE*
-###### URL Params
+#### URL Params
 Required:  
 * *taskName=[string]*
-###### Success Response:
+#### Success Response:
 ```javascript
     {
         Code: 200,
@@ -16,7 +16,7 @@ Required:
         Response: ""
     }
 ```
-###### Error Response:
+#### Error Response:
 ```javascript
     {
         Code: 400,
@@ -24,7 +24,7 @@ Required:
         Response: "" 
     }
 ```
-###### Sample Call:
+#### Sample Call:
 ```javascript
     $.ajax({
         url: "/v1/task/taskName",

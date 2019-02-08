@@ -1,11 +1,11 @@
 *[content](../README.md)*
-#### Get task's list 
+### Get task's list 
 *Returns json data with information about tasks*
-###### URL
-*/v1/task/list*
-###### Method
+#### URL
+*/v1/tasks*
+#### Method
 *GET*
-###### Success Response:
+#### Success Response:
 ```javascript
     {
         Code: 200,
@@ -17,7 +17,7 @@
         ] 
     }
 ```
-###### Error Response:
+#### Error Response:
 ```javascript
     {
         Code: 400,
@@ -25,10 +25,10 @@
         Response: "" 
     }
 ```
-###### Sample Call:
+#### Sample Call:
 ```javascript
     $.ajax({
-        url: "/v1/task/list",
+        url: "/v1/tasks",
         dataType: "json",
         type : "GET",
         success : function(r) {
