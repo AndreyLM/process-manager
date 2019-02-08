@@ -5,45 +5,45 @@ import (
 	"time"
 )
 
-// Process - model for process
-type Process struct {
+// Task - model for task
+type Task struct {
 	Name        string
 	Description string
-	Tasks       []*Task
+	Processes   []*Process
 	MaxCount    int
 	count       int
 }
 
-// CreateProcess - creates new process
-func CreateProcess(name, description string, maxCount int) *Process {
-	return &Process{
+// CreateTask - creates new task
+func CreateTask(name, description string, maxCount int) *Task {
+	return &Task{
 		Name:        name,
 		Description: description,
 		MaxCount:    maxCount,
 	}
 }
 
-// AddTask - adds task to process
-func (p *Process) AddTask(task *Task) error {
-	p.removeExpiredTaskes()
-	if p.count < p.MaxCount {
-		p.count++
-		p.Tasks = append(p.Tasks, task)
+// AddProcess - adds process to task
+func (t *Task) AddProcess(p *Process) error {
+	t.removeExpiredTaskes()
+	if t.count < t.MaxCount {
+		t.count++
+		t.Processes = append(t.Processes, p)
 		return nil
 	}
 
-	return fmt.Errorf("Cannot add task process. You reached max count: %d", p.MaxCount)
+	return fmt.Errorf("Cannot add process to task. You reached max count: %d", t.MaxCount)
 }
 
-func (p *Process) removeExpiredTaskes() {
-	var newTasks []*Task
+func (t *Task) removeExpiredTaskes() {
+	var newProcesses []*Process
 
-	for _, val := range p.Tasks {
+	for _, val := range t.Processes {
 		if val.Expire.UnixNano() > time.Now().UnixNano() {
-			newTasks = append(newTasks, val)
+			newProcesses = append(newProcesses, val)
 		}
 	}
 
-	p.Tasks = newTasks
-	p.count = len(p.Tasks)
+	t.Processes = newProcesses
+	t.count = len(t.Processes)
 }

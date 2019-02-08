@@ -1,6 +1,7 @@
 # <p align="center">PROCESS MANAGER API</p>
 ---------------------------------------------
 ## <a name="content"><p align="center">Content</p>
+* [Get task's list](docs/TASK_LIST.md)
 * [Get process's list](#processList)
 * [Check if process exist](#processExist)
 * [Get process info](#processInfo)
@@ -119,7 +120,6 @@ Required:
     });
 ```
 ------------------------------
-
 #### <a name="processCreate">Create process *[content](#content)*
 *Create new process*
 ###### URL

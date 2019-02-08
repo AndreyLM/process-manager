@@ -2,9 +2,9 @@ package process
 
 import "fmt"
 
-// Collection - collection of processes
+// Collection - collection of tasks
 type Collection struct {
-	processes []*Process
+	Tasks []*Task
 }
 
 // CreateCollection - creates new collection
@@ -12,9 +12,9 @@ func CreateCollection() *Collection {
 	return &Collection{}
 }
 
-// ProcessExist - checks if process exist
-func (c *Collection) ProcessExist(name string) bool {
-	for _, val := range c.processes {
+// TaskExist - checks if task exist
+func (c *Collection) TaskExist(name string) bool {
+	for _, val := range c.Tasks {
 		if val.Name == name {
 			return true
 		}
@@ -23,33 +23,33 @@ func (c *Collection) ProcessExist(name string) bool {
 	return false
 }
 
-// AddProcess - add process to collection
-func (c *Collection) AddProcess(process *Process) error {
-	for _, val := range c.processes {
-		if val.Name == process.Name {
-			return fmt.Errorf("Process %s already exist", process.Name)
+// AddTask - add task to collection
+func (c *Collection) AddTask(t *Task) error {
+	for _, val := range c.Tasks {
+		if val.Name == t.Name {
+			return fmt.Errorf("Process %s already exist", t.Name)
 		}
 	}
 
-	c.processes = append(c.processes, process)
+	c.Tasks = append(c.Tasks, t)
 	return nil
 }
 
-// RemoveProcess - removes process from collection
-func (c *Collection) RemoveProcess(name string) {
-	for i, val := range c.processes {
+// RemoveTask - removes task from collection
+func (c *Collection) RemoveTask(name string) {
+	for i, val := range c.Tasks {
 		if val.Name == name {
-			c.processes = append(c.processes[:i], c.processes[i+1])
+			c.Tasks = append(c.Tasks[:i], c.Tasks[i+1])
 			return
 		}
 	}
 }
 
-// GetProcess - get process by name
-func (c *Collection) GetProcess(name string) *Process {
-	for _, process := range c.processes {
-		if process.Name == name {
-			return process
+// GetTask - get task by name
+func (c *Collection) GetTask(name string) *Task {
+	for _, task := range c.Tasks {
+		if task.Name == name {
+			return task
 		}
 	}
 
