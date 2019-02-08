@@ -2,7 +2,7 @@
 ### Get task info
 *Returns json data with information about task*
 #### URL
-*/v1/task/info/{taskName}*
+*/v1/task/{taskName}*
 #### Method
 *GET*
 #### URL Params
@@ -27,7 +27,7 @@ Required:
 #### Sample Call:
 ```javascript
     $.ajax({
-        url: "/v1/task/info/taskName",
+        url: "/v1/task/taskName",
         dataType: "json",
         type : "GET",
         success : function(r) {
