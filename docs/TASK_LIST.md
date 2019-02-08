@@ -11,8 +11,26 @@
         Code: 200,
         Message: "Success",
         Response: [
-            { Name: "Task name", MaxCount: 4, Count: 3},
-            { Name: "Task name2", MaxCount: 3, Count: 3},
+            { 
+                Name: "Task name", 
+                MaxCount: 4, 
+                Count: 3,
+                Data: {
+                    "param1": "value1",
+                    "param2": "value2",
+                    ....
+                }
+            },
+            { 
+                Name: "Task name2", 
+                MaxCount: 3, 
+                Count: 3,
+                Data: {
+                    "param1": "value1",
+                    "param2": "value2",
+                    ....
+                }
+            },
             ....
         ] 
     }

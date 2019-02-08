@@ -1,26 +1,16 @@
 *[content](../README.md)*
-### Create task 
-*Create new task*
+### Delete all task 
+*Delete all task*
 #### URL
-*/v1/task*
+*/v1/tasks*
 #### Method
-*POST*
-#### Data Params
-```javascript
-    {
-        Task: {
-            Name: [string:required],
-            MaxCount: [integer:required],
-            Data: [object:optional]
-        }
-    }
-```
+*DELETE*
 #### Success Response:
 ```javascript
     {
         Code: 200,
         Message: "Success",
-        Response: "" 
+        Response: ""
     }
 ```
 #### Error Response:
@@ -34,15 +24,9 @@
 #### Sample Call:
 ```javascript
     $.ajax({
-        url: "/v1/task",
+        url: "/v1/tasks",
         dataType: "json",
-        type: "POST",
-        data: {
-            Task: {
-                Name: "taskName",
-                MaxCount: 2
-            }
-        },
+        type: "DELETE",
         success : function(r) {
             console.log(r);
         }

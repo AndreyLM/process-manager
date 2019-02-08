@@ -13,7 +13,16 @@ Required:
     {
         Code: 200,
         Message: "Success",
-        Response: { Name: "Task name", MaxCount: 4, Count: 3} 
+        Response: { 
+            Name: "Task name", 
+            MaxCount: 4, 
+            Count: 3,
+            Data: {
+                Param1: value1,
+                Param2: value2,
+                ...
+            }
+        } 
     }
 ```
 #### Error Response:
