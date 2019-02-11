@@ -5,8 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/andreylm/process-manager/models/process"
-
+	"github.com/andreylm/process-manager/models/task"
 	ServerFactory "github.com/andreylm/process-manager/server"
 	"github.com/joho/godotenv"
 )
@@ -45,8 +44,8 @@ func init() {
 }
 
 func main() {
-	processCollection := process.CreateCollection()
+	taskCollection := task.CreateCollection()
 
-	server := ServerFactory.NewServer(host, port, processCollection)
+	server := ServerFactory.NewServer(host, port, taskCollection)
 	server.Start()
 }

@@ -8,11 +8,10 @@
 #### Data Params
 ```javascript
     {
-        Task: {
-            Name: [string:required],
-            MaxCount: [integer:required],
-            Data: [object:optional]
-        }
+        name: [string:required],
+        maxCount: [integer:optional],
+        description: [string:optional],
+        data: [object:optional]
     }
 ```
 #### Success Response:
@@ -38,9 +37,12 @@
         dataType: "json",
         type: "POST",
         data: {
-            Task: {
-                Name: "taskName",
-                MaxCount: 2
+            "name": "taskName",
+            "description": "some description",
+            "maxCount": 2,
+            "data" : {
+                "param1" : "someValue",
+                "param2" : 3
             }
         },
         success : function(r) {

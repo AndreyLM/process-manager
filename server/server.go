@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/andreylm/process-manager/models/process"
+	"github.com/andreylm/process-manager/models/task"
 	RouterFactory "github.com/andreylm/process-manager/router"
 	"github.com/gorilla/handlers"
 )
@@ -27,7 +27,7 @@ func (s *Server) Start() {
 }
 
 // NewServer - creates a new server
-func NewServer(host string, port int, collection *process.Collection) *Server {
+func NewServer(host string, port int, collection *task.Collection) *Server {
 	var server Server
 	server.Host = host
 	server.Port = port

@@ -1,6 +1,8 @@
-package process
+package task
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // Collection - collection of tasks
 type Collection struct {
@@ -27,7 +29,7 @@ func (c *Collection) TaskExist(name string) bool {
 func (c *Collection) AddTask(t *Task) error {
 	for _, val := range c.Tasks {
 		if val.Name == t.Name {
-			return fmt.Errorf("Process %s already exist", t.Name)
+			return fmt.Errorf("Task \"%s\" already exist", t.Name)
 		}
 	}
 
@@ -37,12 +39,14 @@ func (c *Collection) AddTask(t *Task) error {
 
 // RemoveTask - removes task from collection
 func (c *Collection) RemoveTask(name string) {
-	for i, val := range c.Tasks {
-		if val.Name == name {
-			c.Tasks = append(c.Tasks[:i], c.Tasks[i+1])
-			return
+	var newTasks []*Task
+	for _, val := range c.Tasks {
+		if val.Name != name {
+			newTasks = append(newTasks, val)
 		}
 	}
+
+	c.Tasks = newTasks
 }
 
 // GetTask - get task by name

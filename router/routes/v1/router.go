@@ -3,9 +3,9 @@ package v1
 import (
 	"net/http"
 
-	"github.com/andreylm/process-manager/models/process"
+	"github.com/andreylm/process-manager/models/task"
 	"github.com/andreylm/process-manager/router/routes"
-	V1ProcessRoutes "github.com/andreylm/process-manager/router/routes/v1/process"
+	V1TaskRoutes "github.com/andreylm/process-manager/router/routes/v1/task"
 )
 
 // Middleware - sub route middleware
@@ -17,15 +17,45 @@ func Middleware(next http.Handler) http.Handler {
 }
 
 // GetRoutes - get v1 routes
-func GetRoutes(collection *process.Collection) (SubRoute map[string]routes.SubRoutePackage) {
+func GetRoutes(collection *task.Collection) (SubRoute map[string]routes.SubRoutePackage) {
 	SubRoute = map[string]routes.SubRoutePackage{
 		"/v1": routes.SubRoutePackage{
 			Routes: routes.Routes{
 				routes.Route{
-					Name:        "V1ProcessCreateRoute",
+					Name:        "V1TaskListRoute",
+					Method:      "GET",
+					Pattern:     "/tasks",
+					HandlerFunc: V1TaskRoutes.List(collection),
+				},
+				routes.Route{
+					Name:        "V1TaskCreateRoute",
 					Method:      "POST",
-					Pattern:     "/create",
-					HandlerFunc: V1ProcessRoutes.Create(collection),
+					Pattern:     "/task",
+					HandlerFunc: V1TaskRoutes.Create(collection),
+				},
+				routes.Route{
+					Name:        "V1TaskExistRoute",
+					Method:      "GET",
+					Pattern:     "/task/exist/{task}",
+					HandlerFunc: V1TaskRoutes.Exist(collection),
+				},
+				routes.Route{
+					Name:        "V1TaskInfoRoute",
+					Method:      "GET",
+					Pattern:     "/task/{task}",
+					HandlerFunc: V1TaskRoutes.Info(collection),
+				},
+				routes.Route{
+					Name:        "V1TaskDeleteRoute",
+					Method:      "DELETE",
+					Pattern:     "/task/{task}",
+					HandlerFunc: V1TaskRoutes.Delete(collection),
+				},
+				routes.Route{
+					Name:        "V1TaskDeleteAllRoute",
+					Method:      "DELETE",
+					Pattern:     "/tasks",
+					HandlerFunc: V1TaskRoutes.DeleteAll(collection),
 				},
 			},
 			Middleware: Middleware,

@@ -8,24 +8,24 @@
 #### Success Response:
 ```javascript
     {
-        Code: 200,
-        Message: "Success",
-        Response: [
+        "Code": 200,
+        "Message": "Tasks list",
+        "Response": [
             { 
-                Name: "Task name", 
-                MaxCount: 4, 
-                Count: 3,
-                Data: {
+                "name": "Task name", 
+                "maxCount": 4, 
+                "count": 3,
+                "data": {
                     "param1": "value1",
                     "param2": "value2",
                     ....
                 }
             },
             { 
-                Name: "Task name2", 
-                MaxCount: 3, 
-                Count: 3,
-                Data: {
+                "name": "Task name2", 
+                "maxCount": 3, 
+                "count": 3,
+                "data": {
                     "param1": "value1",
                     "param2": "value2",
                     ....

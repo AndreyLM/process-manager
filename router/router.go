@@ -3,7 +3,7 @@ package router
 import (
 	"net/http"
 
-	"github.com/andreylm/process-manager/models/process"
+	"github.com/andreylm/process-manager/models/task"
 	"github.com/andreylm/process-manager/router/routes"
 	V1Routes "github.com/andreylm/process-manager/router/routes/v1"
 	"github.com/gorilla/mux"
@@ -39,7 +39,7 @@ func (r *RouteHandler) AttachSubRouterWithMiddleware(
 }
 
 // NewRouter - creates new route handler
-func NewRouter(collection *process.Collection) *RouteHandler {
+func NewRouter(collection *task.Collection) *RouteHandler {
 	var router RouteHandler
 
 	router.Router = mux.NewRouter().StrictSlash(true)

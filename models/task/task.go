@@ -1,4 +1,4 @@
-package process
+package task
 
 import (
 	"fmt"
@@ -7,12 +7,12 @@ import (
 
 // Task - model for task
 type Task struct {
-	Name        string
-	Description string
-	Processes   []*Process
-	Data        *map[interface{}]interface{}
-	MaxCount    int
-	Count       int
+	Name        string      `json:"name"`
+	Description string      `json:"description"`
+	Processes   []*Process  `json:"-"`
+	Data        interface{} `json:"data"`
+	MaxCount    int         `json:"maxCount"`
+	Count       int         `json:"count"`
 }
 
 // CreateTask - creates new task
