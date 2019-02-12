@@ -1,4 +1,4 @@
-package task
+package process
 
 import (
 	"net/http"
@@ -14,6 +14,7 @@ func Info(collection *task.Collection) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		vars := mux.Vars(r)
 		taskName := vars["task"]
+		processUUID := vars["uuid"]
 
 		task := collection.GetTask(taskName)
 
@@ -30,6 +31,21 @@ func Info(collection *task.Collection) http.HandlerFunc {
 		}
 
 		task.RemoveExpiredProcesses()
+		for _, val := range task.Processes {
+			if val.UUID.String() == processUUID {
+				utils.Respond(
+					w,
+					utils.PrepareData(
+						http.StatusOK,
+						"Process info",
+						val,
+					),
+				)
+
+				return
+			}
+		}
+
 		utils.Respond(
 			w,
 			utils.PrepareData(

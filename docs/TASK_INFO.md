@@ -14,13 +14,23 @@ Required:
         "Code": 200,
         "Message": "Task info",
         "Response": { 
-            "name": "Task name", 
-            "maxCount": 4, 
+            "name": "Task name",
+            "description": "",
+            "processes": [
+                {
+                    "uuid": "2c089277-ff0c-4f9f-9806-b0cc99a5da5d",
+                    "data": null,
+                    "status": "",
+                    "expire": "12/02/2019 11:40:42.9607"
+                },
+                .....
+            ],
             "data": {
                 "param1": value1,
                 "Param2": value2,
                 ...
-            },
+            }, 
+            "maxCount": 4, 
             "count": 3
         } 
     }

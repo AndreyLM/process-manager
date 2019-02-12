@@ -10,6 +10,7 @@ import (
 // List - gets list of tasks
 func List(collection *task.Collection) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		collection.RemoveExpired()
 		utils.Respond(
 			w,
 			utils.PrepareData(

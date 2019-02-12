@@ -1,7 +1,6 @@
 package task
 
 import (
-	"log"
 	"time"
 
 	uuid "github.com/satori/go.uuid"

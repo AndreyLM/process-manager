@@ -59,3 +59,10 @@ func (c *Collection) GetTask(name string) *Task {
 
 	return nil
 }
+
+// RemoveExpired - removes expired processes from tasks
+func (c *Collection) RemoveExpired() {
+	for _, task := range c.Tasks {
+		task.RemoveExpiredProcesses()
+	}
+}

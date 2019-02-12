@@ -7,6 +7,7 @@ import (
 
 	"github.com/andreylm/process-manager/router/routes/v1/process/forms"
 	"github.com/andreylm/process-manager/utils"
+	uuid "github.com/satori/go.uuid"
 
 	"github.com/gorilla/mux"
 
@@ -45,7 +46,8 @@ func Create(collection *task.Collection) http.HandlerFunc {
 			return
 		}
 
-		// currentTask := collection.GetTask(taskName)
+		currentTask := collection.GetTask(taskName)
+		currentTask.RemoveExpiredProcesses()
 		newProcess, err := task.CreateProcess(form.Duration, form.Data)
 		if err != nil {
 			log.Println(err)
@@ -53,19 +55,35 @@ func Create(collection *task.Collection) http.HandlerFunc {
 				w,
 				utils.PrepareData(
 					http.StatusBadRequest,
-					"Error parsing request",
-					err,
+					err.Error(),
+					nil,
 				),
 			)
 			return
 		}
-		// response, _ := json.Marshal(newProcess)
+
+		err = currentTask.AddProcess(newProcess)
+		if err != nil {
+			log.Println(err)
+			utils.Respond(
+				w,
+				utils.PrepareData(
+					http.StatusBadRequest,
+					err.Error(),
+					nil,
+				),
+			)
+			return
+		}
+
 		utils.Respond(
 			w,
 			utils.PrepareData(
 				http.StatusOK,
 				"Process",
-				newProcess,
+				struct {
+					UUID uuid.UUID `json:"uuid"`
+				}{newProcess.UUID},
 			),
 		)
 		return

@@ -10,10 +10,9 @@
 * [Delete task +](docs/TASK_DELETE.md)
 ---------------------------------------------
 #### Processes
-* [Get process's list](docs/PROCESS_LIST.md)
-* [Delete all processes](docs/PROCESSES_DELETE.md)
-* [Check if process exist](docs/PROCESS_EXIST.md)
-* [Get process info](docs/PROCESS_INFO.md)
+* [Delete all processes +](docs/PROCESSES_DELETE.md)
+* [Check if process exist +](docs/PROCESS_EXIST.md)
+* [Get process info +](docs/PROCESS_INFO.md)
 * [Create new process +](docs/PROCESS_CREATE.md)
-* [Delete process](docs/PROCESS_DELETE.md)
+* [Delete process +](docs/PROCESS_DELETE.md)
 ---------------------------------------------
