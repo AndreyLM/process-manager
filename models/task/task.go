@@ -40,7 +40,7 @@ func (t *Task) removeExpiredTaskes() {
 	var newProcesses []*Process
 
 	for _, val := range t.Processes {
-		if val.Expire.UnixNano() > time.Now().UnixNano() {
+		if val.Expire.Time.UnixNano() > time.Now().UnixNano() {
 			newProcesses = append(newProcesses, val)
 		}
 	}

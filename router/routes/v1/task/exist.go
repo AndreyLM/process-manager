@@ -20,7 +20,7 @@ func Exist(collection *task.Collection) http.HandlerFunc {
 				w,
 				utils.PrepareData(
 					http.StatusOK,
-					"",
+					"Success",
 					true,
 				),
 			)
@@ -29,7 +29,7 @@ func Exist(collection *task.Collection) http.HandlerFunc {
 				w,
 				utils.PrepareData(
 					http.StatusOK,
-					"",
+					"Success",
 					false,
 				),
 			)

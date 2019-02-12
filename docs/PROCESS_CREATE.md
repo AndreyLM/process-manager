@@ -2,15 +2,16 @@
 ### Create task 
 *Create new task*
 #### URL
-*/v1/task*
+*/v1/task/{taskName}*
 #### Method
 *POST*
+#### URL Params
+Required:  
+* *taskName=[string]*
 #### Data Params
 ```javascript
     {
-        "name": [string:required],
-        "maxCount": [integer:optional],
-        "description": [string:optional],
+        "duration": [integer:required],
         "data": [object:optional]
     }
 ```
@@ -18,7 +19,7 @@
 ```javascript
     {
         "Code": 200,
-        "Message": "Task successfully added to collection",
+        "Message": "Process successfully added task",
         "Response": null 
     }
 ```

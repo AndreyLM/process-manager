@@ -12,24 +12,26 @@
         "Message": "Tasks list",
         "Response": [
             { 
-                "name": "Task name", 
-                "maxCount": 4, 
-                "count": 3,
+                "name": "Task name",
+                "description": "description", 
                 "data": {
                     "param1": "value1",
                     "param2": "value2",
                     ....
-                }
+                },
+                "maxCount": 4, 
+                "count": 3
             },
             { 
                 "name": "Task name2", 
-                "maxCount": 3, 
-                "count": 3,
+                "description": "description2", 
                 "data": {
                     "param1": "value1",
                     "param2": "value2",
                     ....
-                }
+                },
+                "maxCount": 3, 
+                "count": 3
             },
             ....
         ] 
@@ -40,7 +42,7 @@
     {
         Code: 400,
         Message: "Detailed error description",
-        Response: "" 
+        Response: null 
     }
 ```
 #### Sample Call:

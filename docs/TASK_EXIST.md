@@ -11,17 +11,17 @@ Required:
 #### Success Response:
 ```javascript
     {
-        Code: 200,
-        Message: "Success",
-        Response: true || false 
+        "Code": 200,
+        "Message": "Success",
+        "Response": true || false 
     }
 ```
 #### Error Response:
 ```javascript
     {
-        Code: 400,
-        Message: "Detailed error description",
-        Response: "" 
+        "Code": 400,
+        "Message": "Detailed error description",
+        "Response": "" 
     }
 ```
 #### Sample Call:

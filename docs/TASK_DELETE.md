@@ -11,17 +11,17 @@ Required:
 #### Success Response:
 ```javascript
     {
-        Code: 200,
-        Message: "Success",
-        Response: ""
+        "Code": 200,
+        "Message": "Task was successfully deleted",
+        "Response": null
     }
 ```
 #### Error Response:
 ```javascript
     {
-        Code: 400,
-        Message: "Detailed error description",
-        Response: "" 
+        "Code": 400,
+        "Message": "Detailed error description",
+        "Response": null 
     }
 ```
 #### Sample Call:

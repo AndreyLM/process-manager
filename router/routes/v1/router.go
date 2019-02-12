@@ -5,6 +5,7 @@ import (
 
 	"github.com/andreylm/process-manager/models/task"
 	"github.com/andreylm/process-manager/router/routes"
+	V1ProcessRoutes "github.com/andreylm/process-manager/router/routes/v1/process"
 	V1TaskRoutes "github.com/andreylm/process-manager/router/routes/v1/task"
 )
 
@@ -21,6 +22,7 @@ func GetRoutes(collection *task.Collection) (SubRoute map[string]routes.SubRoute
 	SubRoute = map[string]routes.SubRoutePackage{
 		"/v1": routes.SubRoutePackage{
 			Routes: routes.Routes{
+				// Task's routes
 				routes.Route{
 					Name:        "V1TaskListRoute",
 					Method:      "GET",
@@ -56,6 +58,13 @@ func GetRoutes(collection *task.Collection) (SubRoute map[string]routes.SubRoute
 					Method:      "DELETE",
 					Pattern:     "/tasks",
 					HandlerFunc: V1TaskRoutes.DeleteAll(collection),
+				},
+				// Process routes
+				routes.Route{
+					Name:        "V1ProcessCreateRoute",
+					Method:      "POST",
+					Pattern:     "/task/{name}",
+					HandlerFunc: V1ProcessRoutes.Create(collection),
 				},
 			},
 			Middleware: Middleware,
