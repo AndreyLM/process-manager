@@ -1,19 +1,15 @@
 *[content](../README.md)*
-### Delete task 
-*Delete task*
+### Delete all task 
+*Delete all processes in task*
 #### URL
-*/v1/task/{taskName}/{processUUID}*
+*/task/{taskName}/clear*
 #### Method
 *DELETE*
-#### URL Params
-Required:  
-* *taskName=[string]*
-* *processUUID=[string]*
 #### Success Response:
 ```javascript
     {
         "Code": 200,
-        "Message": "Process was deleted",
+        "Message": "All processes were deleted",
         "Response": null
     }
 ```
@@ -28,7 +24,7 @@ Required:
 #### Sample Call:
 ```javascript
     $.ajax({
-        url: "/v1/task/taskName/processUUID",
+        url: "/task/taskName/clear",
         dataType: "json",
         type: "DELETE",
         success : function(r) {

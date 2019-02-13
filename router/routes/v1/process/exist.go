@@ -13,7 +13,7 @@ import (
 func Exist(collection *task.Collection) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		vars := mux.Vars(r)
-		taskName := vars["task"]
+		taskName := vars["name"]
 		processUUID := mux.Vars(r)["uuid"]
 
 		if !collection.TaskExist(taskName) {

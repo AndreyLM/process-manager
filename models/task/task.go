@@ -8,12 +8,12 @@ import (
 
 // Task - model for task
 type Task struct {
-	Name        string      `json:"name"`
-	Description string      `json:"description"`
-	Processes   []*Process  `json:"processes"`
-	Data        interface{} `json:"data"`
-	MaxCount    int         `json:"maxCount"`
-	Count       int         `json:"count"`
+	Name        string      `json:"name,omitempty"`
+	Description string      `json:"description,omitempty"`
+	Processes   []*Process  `json:"processes,omitempty"`
+	Data        interface{} `json:"data,omitempty"`
+	MaxCount    int         `json:"maxCount,omitempty"`
+	Count       int         `json:"count,omitempty"`
 }
 
 // CreateTask - creates new task

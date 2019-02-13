@@ -38,19 +38,19 @@ func GetRoutes(collection *task.Collection) (SubRoute map[string]routes.SubRoute
 				routes.Route{
 					Name:        "V1TaskExistRoute",
 					Method:      "GET",
-					Pattern:     "/task/exist/{task}",
+					Pattern:     "/task/exist/{name}",
 					HandlerFunc: V1TaskRoutes.Exist(collection),
 				},
 				routes.Route{
 					Name:        "V1TaskInfoRoute",
 					Method:      "GET",
-					Pattern:     "/task/{task}",
+					Pattern:     "/task/{name}",
 					HandlerFunc: V1TaskRoutes.Info(collection),
 				},
 				routes.Route{
 					Name:        "V1TaskDeleteRoute",
 					Method:      "DELETE",
-					Pattern:     "/task/{task}",
+					Pattern:     "/task/{name}",
 					HandlerFunc: V1TaskRoutes.Delete(collection),
 				},
 				routes.Route{
@@ -67,16 +67,16 @@ func GetRoutes(collection *task.Collection) (SubRoute map[string]routes.SubRoute
 					HandlerFunc: V1ProcessRoutes.Create(collection),
 				},
 				routes.Route{
-					Name:        "V1ProcessDeleteRoute",
-					Method:      "DELETE",
-					Pattern:     "/task/{name}/{uuid}",
-					HandlerFunc: V1ProcessRoutes.Delete(collection),
-				},
-				routes.Route{
 					Name:        "V1ProcessDeleteAllRoute",
 					Method:      "DELETE",
 					Pattern:     "/task/{name}/clear",
 					HandlerFunc: V1ProcessRoutes.DeleteAll(collection),
+				},
+				routes.Route{
+					Name:        "V1ProcessDeleteRoute",
+					Method:      "DELETE",
+					Pattern:     "/task/{name}/{uuid}",
+					HandlerFunc: V1ProcessRoutes.Delete(collection),
 				},
 				routes.Route{
 					Name:        "V1ProcessExistRoute",
@@ -85,7 +85,7 @@ func GetRoutes(collection *task.Collection) (SubRoute map[string]routes.SubRoute
 					HandlerFunc: V1ProcessRoutes.Exist(collection),
 				},
 				routes.Route{
-					Name:        "V1ProcessExistRoute",
+					Name:        "V1ProcessInfoRoute",
 					Method:      "GET",
 					Pattern:     "/task/{name}/{uuid}",
 					HandlerFunc: V1ProcessRoutes.Info(collection),

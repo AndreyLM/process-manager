@@ -1,6 +1,6 @@
 *[content](../README.md)*
-### Create task 
-*Create new task*
+### Create process 
+*Create new process*
 #### URL
 */v1/task/{taskName}*
 #### Method
@@ -19,8 +19,10 @@ Required:
 ```javascript
     {
         "Code": 200,
-        "Message": "Process successfully added task",
-        "Response": null 
+        "Message": "Process successfully added to task",
+        "Response": {
+            "uuid" : "7b33b415-ccb6-46cb-9734-58e918a590de"
+        } 
     }
 ```
 #### Error Response:
@@ -34,12 +36,11 @@ Required:
 #### Sample Call:
 ```javascript
     $.ajax({
-        url: "/v1/task",
+        url: "/v1/task/taskName",
         dataType: "json",
         type: "POST",
         data: { 
-            "name": "task",
-            "maxCount" : 3,
+            "duration": 300, // process life-time in seconds 
             "description" : "description",
             "data" : {
                 "offset" : 13,

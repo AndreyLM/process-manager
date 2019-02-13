@@ -1,10 +1,10 @@
 *[content](../README.md)*
-### Delete task 
-*Delete task*
+### Check if task exist 
+*Returns json data with information about task existence*
 #### URL
-*/v1/task/{taskName}/{processUUID}*
+*/v1/task/{taskName}/{processUUID}/exist*
 #### Method
-*DELETE*
+*GET*
 #### URL Params
 Required:  
 * *taskName=[string]*
@@ -13,8 +13,8 @@ Required:
 ```javascript
     {
         "Code": 200,
-        "Message": "Process was deleted",
-        "Response": null
+        "Message": "Process exists" || "Process does not exist",
+        "Response": true || false
     }
 ```
 #### Error Response:
@@ -22,15 +22,15 @@ Required:
     {
         "Code": 400,
         "Message": "Detailed error description",
-        "Response": null 
+        "Response": "" 
     }
 ```
 #### Sample Call:
 ```javascript
     $.ajax({
-        url: "/v1/task/taskName/processUUID",
+        url: "/v1/task/taskName/processUUID/exist",
         dataType: "json",
-        type: "DELETE",
+        type : "GET",
         success : function(r) {
             console.log(r);
         }

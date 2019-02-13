@@ -80,7 +80,7 @@ func Create(collection *task.Collection) http.HandlerFunc {
 			w,
 			utils.PrepareData(
 				http.StatusOK,
-				"Process",
+				"Process successfully added to task",
 				struct {
 					UUID uuid.UUID `json:"uuid"`
 				}{newProcess.UUID},

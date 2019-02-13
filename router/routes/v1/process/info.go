@@ -13,7 +13,7 @@ import (
 func Info(collection *task.Collection) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		vars := mux.Vars(r)
-		taskName := vars["task"]
+		taskName := vars["name"]
 		processUUID := vars["uuid"]
 
 		task := collection.GetTask(taskName)

@@ -14,6 +14,9 @@
             { 
                 "name": "Task name",
                 "description": "description", 
+                "": {
+
+                },
                 "data": {
                     "param1": "value1",
                     "param2": "value2",
