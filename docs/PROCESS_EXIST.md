@@ -1,6 +1,6 @@
 *[content](../README.md)*
-### Check if task exist 
-*Returns json data with information about task existence*
+### Check if process exist 
+*Returns json data with information about process existence*
 #### URL
 */v1/task/{taskName}/{processUUID}/exist*
 #### Method

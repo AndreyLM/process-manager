@@ -1,6 +1,6 @@
 *[content](../README.md)*
-### Delete task 
-*Delete task*
+### Delete process 
+*Delete process*
 #### URL
 */v1/task/{taskName}/{processUUID}*
 #### Method
